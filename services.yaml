@@ -1,0 +1,70 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    creationTimestamp: "2024-02-25T05:52:47Z"
+    labels:
+      component: apiserver
+      provider: kubernetes
+    name: kubernetes
+    namespace: default
+    resourceVersion: "194"
+    uid: cee6e692-61d3-431e-8ea7-2dff59e0afd5
+  spec:
+    clusterIP: 10.36.0.1
+    clusterIPs:
+    - 10.36.0.1
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 443
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      cloud.google.com/neg: '{"ingress":true}'
+    creationTimestamp: "2024-02-25T09:01:48Z"
+    finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+    labels:
+      name: kubia-liveness-test
+    name: kubia-liveness
+    namespace: default
+    resourceVersion: "104128"
+    uid: 3e6279d0-6471-46f8-be79-41a260ac2aa6
+  spec:
+    allocateLoadBalancerNodePorts: true
+    clusterIP: 10.36.15.243
+    clusterIPs:
+    - 10.36.15.243
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - nodePort: 30191
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      name: kubia-liveness-test
+    sessionAffinity: None
+    type: LoadBalancer
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 35.197.21.164
+kind: List
+metadata:
+  resourceVersion: ""

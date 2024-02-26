@@ -1,0 +1,1974 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-26T01:15:02Z"
+    finalizers:
+    - batch.kubernetes.io/job-tracking
+    generateName: batch-job-every-fifteen-minutes-28481835-
+    labels:
+      batch.kubernetes.io/controller-uid: e769cbcd-93fd-4efd-a847-685140057a1f
+      batch.kubernetes.io/job-name: batch-job-every-fifteen-minutes-28481835
+      controller-uid: e769cbcd-93fd-4efd-a847-685140057a1f
+      job-name: batch-job-every-fifteen-minutes-28481835
+    name: batch-job-every-fifteen-minutes-28481835-jb6rh
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: batch-job-every-fifteen-minutes-28481835
+      uid: e769cbcd-93fd-4efd-a847-685140057a1f
+    resourceVersion: "669684"
+    uid: 94492411-5ecf-4399-a721-9574b49c8557
+  spec:
+    containers:
+    - image: luska/batch-job
+      imagePullPolicy: Always
+      name: main
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-4v8t9
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-4v8t9
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:15:02Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:15:02Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:15:02Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:15:02Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - image: luska/batch-job
+      imageID: ""
+      lastState: {}
+      name: main
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        waiting:
+          message: Back-off pulling image "luska/batch-job"
+          reason: ImagePullBackOff
+    hostIP: 10.138.0.3
+    phase: Pending
+    podIP: 10.32.0.14
+    podIPs:
+    - ip: 10.32.0.14
+    qosClass: BestEffort
+    startTime: "2024-02-26T01:15:02Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-26T01:30:00Z"
+    finalizers:
+    - batch.kubernetes.io/job-tracking
+    generateName: batch-job-every-fifteen-minutes-28481850-
+    labels:
+      batch.kubernetes.io/controller-uid: 70b39098-96ed-4c72-93e7-fdac6e292fff
+      batch.kubernetes.io/job-name: batch-job-every-fifteen-minutes-28481850
+      controller-uid: 70b39098-96ed-4c72-93e7-fdac6e292fff
+      job-name: batch-job-every-fifteen-minutes-28481850
+    name: batch-job-every-fifteen-minutes-28481850-jtkzs
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: batch-job-every-fifteen-minutes-28481850
+      uid: 70b39098-96ed-4c72-93e7-fdac6e292fff
+    resourceVersion: "669276"
+    uid: 3cceff46-be0c-487b-9249-0bdfcb585a8c
+  spec:
+    containers:
+    - image: luska/batch-job
+      imagePullPolicy: Always
+      name: main
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-f6894
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-f6894
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:30:00Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:30:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:30:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:30:00Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - image: luska/batch-job
+      imageID: ""
+      lastState: {}
+      name: main
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        waiting:
+          message: Back-off pulling image "luska/batch-job"
+          reason: ImagePullBackOff
+    hostIP: 10.138.0.3
+    phase: Pending
+    podIP: 10.32.0.16
+    podIPs:
+    - ip: 10.32.0.16
+    qosClass: BestEffort
+    startTime: "2024-02-26T01:30:00Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-26T01:45:00Z"
+    finalizers:
+    - batch.kubernetes.io/job-tracking
+    generateName: batch-job-every-fifteen-minutes-28481865-
+    labels:
+      batch.kubernetes.io/controller-uid: d51011b5-346d-46b3-89e5-a27adb0c15dd
+      batch.kubernetes.io/job-name: batch-job-every-fifteen-minutes-28481865
+      controller-uid: d51011b5-346d-46b3-89e5-a27adb0c15dd
+      job-name: batch-job-every-fifteen-minutes-28481865
+    name: batch-job-every-fifteen-minutes-28481865-hwln4
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: batch-job-every-fifteen-minutes-28481865
+      uid: d51011b5-346d-46b3-89e5-a27adb0c15dd
+    resourceVersion: "669100"
+    uid: 8372cbe1-3ba8-4a04-b48f-bf51b2ed91e2
+  spec:
+    containers:
+    - image: luska/batch-job
+      imagePullPolicy: Always
+      name: main
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-qmrb7
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-qmrb7
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:45:00Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:45:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:45:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:45:00Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - image: luska/batch-job
+      imageID: ""
+      lastState: {}
+      name: main
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        waiting:
+          message: Back-off pulling image "luska/batch-job"
+          reason: ImagePullBackOff
+    hostIP: 10.138.0.3
+    phase: Pending
+    podIP: 10.32.0.17
+    podIPs:
+    - ip: 10.32.0.17
+    qosClass: BestEffort
+    startTime: "2024-02-26T01:45:00Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-26T02:00:00Z"
+    finalizers:
+    - batch.kubernetes.io/job-tracking
+    generateName: batch-job-every-fifteen-minutes-28481880-
+    labels:
+      batch.kubernetes.io/controller-uid: fa7cfd2c-9fd1-49a9-a706-8df025ecad2d
+      batch.kubernetes.io/job-name: batch-job-every-fifteen-minutes-28481880
+      controller-uid: fa7cfd2c-9fd1-49a9-a706-8df025ecad2d
+      job-name: batch-job-every-fifteen-minutes-28481880
+    name: batch-job-every-fifteen-minutes-28481880-vtj96
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: batch-job-every-fifteen-minutes-28481880
+      uid: fa7cfd2c-9fd1-49a9-a706-8df025ecad2d
+    resourceVersion: "671516"
+    uid: 80bf385f-3fb7-4625-87ce-fd1f82985a2f
+  spec:
+    containers:
+    - image: luska/batch-job
+      imagePullPolicy: Always
+      name: main
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-vrdr7
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-vrdr7
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:00:00Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:00:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:00:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:00:00Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - image: luska/batch-job
+      imageID: ""
+      lastState: {}
+      name: main
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        waiting:
+          message: 'rpc error: code = Unknown desc = failed to pull and unpack image
+            "docker.io/luska/batch-job:latest": failed to resolve reference "docker.io/luska/batch-job:latest":
+            pull access denied, repository does not exist or may require authorization:
+            server message: insufficient_scope: authorization failed'
+          reason: ErrImagePull
+    hostIP: 10.138.0.3
+    phase: Pending
+    podIP: 10.32.0.19
+    podIPs:
+    - ip: 10.32.0.19
+    qosClass: BestEffort
+    startTime: "2024-02-26T02:00:00Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-26T02:15:00Z"
+    finalizers:
+    - batch.kubernetes.io/job-tracking
+    generateName: batch-job-every-fifteen-minutes-28481895-
+    labels:
+      batch.kubernetes.io/controller-uid: c8aa5a0c-412c-47f9-8d66-314e7205bdd0
+      batch.kubernetes.io/job-name: batch-job-every-fifteen-minutes-28481895
+      controller-uid: c8aa5a0c-412c-47f9-8d66-314e7205bdd0
+      job-name: batch-job-every-fifteen-minutes-28481895
+    name: batch-job-every-fifteen-minutes-28481895-l7vvp
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: batch-job-every-fifteen-minutes-28481895
+      uid: c8aa5a0c-412c-47f9-8d66-314e7205bdd0
+    resourceVersion: "671527"
+    uid: d5525d21-02c2-4f21-a8e7-63e3702bbe6c
+  spec:
+    containers:
+    - image: luska/batch-job
+      imagePullPolicy: Always
+      name: main
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-78q8q
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-78q8q
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:15:00Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:15:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:15:00Z"
+      message: 'containers with unready status: [main]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:15:00Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - image: luska/batch-job
+      imageID: ""
+      lastState: {}
+      name: main
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        waiting:
+          message: Back-off pulling image "luska/batch-job"
+          reason: ImagePullBackOff
+    hostIP: 10.138.0.3
+    phase: Pending
+    podIP: 10.32.0.20
+    podIPs:
+    - ip: 10.32.0.20
+    qosClass: BestEffort
+    startTime: "2024-02-26T02:15:00Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-26T01:47:30Z"
+    finalizers:
+    - batch.kubernetes.io/job-tracking
+    generateName: batch-job-
+    labels:
+      batch.kubernetes.io/controller-uid: c7460534-c224-470d-a2ae-9dc8e974dd7c
+      batch.kubernetes.io/job-name: batch-job
+      controller-uid: c7460534-c224-470d-a2ae-9dc8e974dd7c
+      job-name: batch-job
+    name: batch-job-p4jkz
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: batch-job
+      uid: c7460534-c224-470d-a2ae-9dc8e974dd7c
+    resourceVersion: "650206"
+    uid: e542317e-235e-44c5-b0cc-f3212db573aa
+  spec:
+    containers:
+    - image: hartej3003/ch4:latest
+      imagePullPolicy: Always
+      name: batch-job
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-k2vwn
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-k2vwn
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:47:30Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:47:32Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:47:32Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:47:30Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://a951fa73a1d4c435f04b22e77bbbd836c81a303caaa8391fb8471f742ffc21c3
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: batch-job
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-26T01:47:31Z"
+    hostIP: 10.138.0.3
+    phase: Running
+    podIP: 10.32.0.18
+    podIPs:
+    - ip: 10.32.0.18
+    qosClass: BestEffort
+    startTime: "2024-02-26T01:47:30Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-26T01:25:47Z"
+    finalizers:
+    - batch.kubernetes.io/job-tracking
+    generateName: exporter-job-
+    labels:
+      app: exporter
+      batch.kubernetes.io/controller-uid: bb56923c-2fdb-4fc0-a310-2aaba25d136c
+      batch.kubernetes.io/job-name: exporter-job
+      controller-uid: bb56923c-2fdb-4fc0-a310-2aaba25d136c
+      job-name: exporter-job
+    name: exporter-job-rgcbn
+    namespace: default
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: exporter-job
+      uid: bb56923c-2fdb-4fc0-a310-2aaba25d136c
+    resourceVersion: "669714"
+    uid: 6355cd21-c0d8-40af-95d5-7ab065304f4b
+  spec:
+    containers:
+    - image: hartej19935:cs571
+      imagePullPolicy: IfNotPresent
+      name: exporter-container
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-7cwg4
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: OnFailure
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-7cwg4
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:25:47Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:25:47Z"
+      message: 'containers with unready status: [exporter-container]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:25:47Z"
+      message: 'containers with unready status: [exporter-container]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T01:25:47Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - image: hartej19935:cs571
+      imageID: ""
+      lastState: {}
+      name: exporter-container
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        waiting:
+          message: Back-off pulling image "hartej19935:cs571"
+          reason: ImagePullBackOff
+    hostIP: 10.138.0.3
+    phase: Pending
+    podIP: 10.32.0.15
+    podIPs:
+    - ip: 10.32.0.15
+    qosClass: BestEffort
+    startTime: "2024-02-26T01:25:47Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T18:03:51Z"
+    generateName: kubia-ds-
+    labels:
+      app: kubia-ds
+      controller-revision-hash: 75666fcd4d
+      pod-template-generation: "1"
+    name: kubia-ds-fx5fx
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: kubia-ds
+      uid: 42014539-1ed5-4b2f-a1bc-ee903ec9a3cf
+    resourceVersion: "398214"
+    uid: 0e597794-4ba3-4a7a-9898-4bb7f03fd187
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchFields:
+            - key: metadata.name
+              operator: In
+              values:
+              - gke-kubia-default-pool-6ff0e626-m6fr
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-ds
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-kb2ts
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/disk-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/pid-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+    volumes:
+    - name: kube-api-access-kb2ts
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:51Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:54Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:54Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:51Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://b6ba511f7202f3e546890217ec60d6da80d5150969747b88dc666c71669f1270
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-ds
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T18:03:53Z"
+    hostIP: 10.138.0.3
+    phase: Running
+    podIP: 10.32.0.12
+    podIPs:
+    - ip: 10.32.0.12
+    qosClass: BestEffort
+    startTime: "2024-02-25T18:03:51Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T18:03:51Z"
+    generateName: kubia-ds-
+    labels:
+      app: kubia-ds
+      controller-revision-hash: 75666fcd4d
+      pod-template-generation: "1"
+    name: kubia-ds-qnpvk
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: kubia-ds
+      uid: 42014539-1ed5-4b2f-a1bc-ee903ec9a3cf
+    resourceVersion: "398197"
+    uid: ad742bc0-1080-4b6d-ab22-1d07d2bfdb83
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchFields:
+            - key: metadata.name
+              operator: In
+              values:
+              - gke-kubia-default-pool-7e811e57-zlmn
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-ds
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-xvcvb
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-7e811e57-zlmn
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/disk-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/pid-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+    volumes:
+    - name: kube-api-access-xvcvb
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:51Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:53Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:53Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:51Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://a1a14a1d41dd41724faa46de804258e76e9c3a7e3a5ffdaedf0d70b891af254e
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-ds
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T18:03:53Z"
+    hostIP: 10.138.0.5
+    phase: Running
+    podIP: 10.32.2.10
+    podIPs:
+    - ip: 10.32.2.10
+    qosClass: BestEffort
+    startTime: "2024-02-25T18:03:51Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T18:03:51Z"
+    generateName: kubia-ds-
+    labels:
+      app: kubia-ds
+      controller-revision-hash: 75666fcd4d
+      pod-template-generation: "1"
+    name: kubia-ds-rr5rh
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: kubia-ds
+      uid: 42014539-1ed5-4b2f-a1bc-ee903ec9a3cf
+    resourceVersion: "398202"
+    uid: c63a1988-77f6-43e2-94d2-673e713ab144
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchFields:
+            - key: metadata.name
+              operator: In
+              values:
+              - gke-kubia-default-pool-9b703655-bk83
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-ds
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-2k7r4
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-9b703655-bk83
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/disk-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/pid-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+    volumes:
+    - name: kube-api-access-2k7r4
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:51Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:53Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:53Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T18:03:51Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://8ecbc164f1e88595eb87e691af38561a3e8658c3f09c056a61411e7beb418efd
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-ds
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T18:03:52Z"
+    hostIP: 10.138.0.4
+    phase: Running
+    podIP: 10.32.1.15
+    podIPs:
+    - ip: 10.32.1.15
+    qosClass: BestEffort
+    startTime: "2024-02-25T18:03:51Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"labels":{"name":"kubia-liveness-test"},"name":"kubia-liveness","namespace":"default"},"spec":{"containers":[{"image":"hartej3003/ch4","livenessProbe":{"httpGet":{"path":"/health","port":8080},"initialDelaySeconds":5,"periodSeconds":5},"name":"kubia-container","ports":[{"containerPort":8080}]}]}}
+    creationTimestamp: "2024-02-25T10:27:26Z"
+    labels:
+      name: kubia-liveness-test
+    name: kubia-liveness
+    namespace: default
+    resourceVersion: "671461"
+    uid: a8424a6a-6d5e-41c1-95ec-de09720a0bde
+  spec:
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /health
+          port: 8080
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: kubia-container
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-ptjnr
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-9b703655-bk83
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-ptjnr
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:27:26Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:26:29Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-26T02:26:29Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:27:26Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://484b0412969b641318bf794acfad4b1fe3c6c57a2712f2b4be0708756b1cabdc
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState:
+        terminated:
+          containerID: containerd://d43c836ff68d571d59a89902db1a839ed64fdc2ac2ee3728f9c1955a2b244fcf
+          exitCode: 137
+          finishedAt: "2024-02-26T02:21:16Z"
+          reason: Error
+          startedAt: "2024-02-26T02:20:06Z"
+      name: kubia-container
+      ready: true
+      restartCount: 259
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-26T02:26:29Z"
+    hostIP: 10.138.0.4
+    phase: Running
+    podIP: 10.32.1.12
+    podIPs:
+    - ip: 10.32.1.12
+    qosClass: BestEffort
+    startTime: "2024-02-25T10:27:26Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T10:47:23Z"
+    generateName: kubia-rc-
+    labels:
+      app: kubia-rc
+    name: kubia-rc-2vqnb
+    namespace: default
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: kubia-rc
+      uid: dce6689e-de85-412e-bc7b-10ac9d78a4a5
+    resourceVersion: "161297"
+    uid: 7f827ff7-ba11-4bd0-83cb-11666ba8eb4d
+  spec:
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-rc
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-28rzr
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-7e811e57-zlmn
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-28rzr
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:23Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:39Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:39Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:23Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://91f979a35be5476ff9ac9838c8a816301a43cef5dbd70a8aaa3b2a79681f2841
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-rc
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T10:47:38Z"
+    hostIP: 10.138.0.5
+    phase: Running
+    podIP: 10.32.2.8
+    podIPs:
+    - ip: 10.32.2.8
+    qosClass: BestEffort
+    startTime: "2024-02-25T10:47:23Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T10:47:23Z"
+    generateName: kubia-rc-
+    labels:
+      app: kubia-rc
+    name: kubia-rc-k9xwp
+    namespace: default
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: kubia-rc
+      uid: dce6689e-de85-412e-bc7b-10ac9d78a4a5
+    resourceVersion: "161175"
+    uid: 144d0dd2-c2fa-4f97-8c5f-9288a16bda59
+  spec:
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-rc
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-bl5qw
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-9b703655-bk83
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-bl5qw
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:23Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:25Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:25Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:23Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://39dd05cdd6a0fa425df0bf99e104681c6061392c18c22ca3a73470f9eb870634
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-rc
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T10:47:24Z"
+    hostIP: 10.138.0.4
+    phase: Running
+    podIP: 10.32.1.13
+    podIPs:
+    - ip: 10.32.1.13
+    qosClass: BestEffort
+    startTime: "2024-02-25T10:47:23Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T10:47:23Z"
+    generateName: kubia-rc-
+    labels:
+      app: kubia-rc
+    name: kubia-rc-kns2l
+    namespace: default
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: kubia-rc
+      uid: dce6689e-de85-412e-bc7b-10ac9d78a4a5
+    resourceVersion: "161409"
+    uid: 5e7c110a-eea2-4377-8504-8fe506238ac5
+  spec:
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-rc
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-f8mfj
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-f8mfj
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:23Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:51Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:51Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:47:23Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://03f629be94f431508553fabe948a986aeeb8b2928185cf29f39412c0eca50df3
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-rc
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T10:47:50Z"
+    hostIP: 10.138.0.3
+    phase: Running
+    podIP: 10.32.0.10
+    podIPs:
+    - ip: 10.32.0.10
+    qosClass: BestEffort
+    startTime: "2024-02-25T10:47:23Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T10:58:21Z"
+    generateName: kubia-rs-
+    labels:
+      app: kubia-rs
+    name: kubia-rs-f7vdb
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: kubia-rs
+      uid: 953af75d-db78-4173-9a15-e14daf8200be
+    resourceVersion: "167160"
+    uid: 16a74543-b6aa-490e-a0a6-19ac633df94a
+  spec:
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-rs
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-w25gf
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-7e811e57-zlmn
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-w25gf
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:21Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:23Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:23Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:21Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://dc01ce3b05130347095c4cb979837a0c05e6b904f10a17d1e645261414aac9fc
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-rs
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T10:58:22Z"
+    hostIP: 10.138.0.5
+    phase: Running
+    podIP: 10.32.2.9
+    podIPs:
+    - ip: 10.32.2.9
+    qosClass: BestEffort
+    startTime: "2024-02-25T10:58:21Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T10:58:21Z"
+    generateName: kubia-rs-
+    labels:
+      app: kubia-rs
+    name: kubia-rs-mkkwc
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: kubia-rs
+      uid: 953af75d-db78-4173-9a15-e14daf8200be
+    resourceVersion: "167146"
+    uid: 3745db43-87b6-4776-bb30-3c65e367e427
+  spec:
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-rs
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-dgcvz
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-9b703655-bk83
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-dgcvz
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:21Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:22Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:22Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:21Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://b714148c67f8c67afcd46cfb204381903c862211c489ce9e7e40a16cafe76092
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-rs
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T10:58:22Z"
+    hostIP: 10.138.0.4
+    phase: Running
+    podIP: 10.32.1.14
+    podIPs:
+    - ip: 10.32.1.14
+    qosClass: BestEffort
+    startTime: "2024-02-25T10:58:21Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-02-25T10:58:21Z"
+    generateName: kubia-rs-
+    labels:
+      app: kubia-rs
+    name: kubia-rs-qdqgb
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: kubia-rs
+      uid: 953af75d-db78-4173-9a15-e14daf8200be
+    resourceVersion: "167163"
+    uid: 62e5ce6a-0b94-4063-8474-8644629a1de5
+  spec:
+    containers:
+    - image: hartej3003/ch4
+      imagePullPolicy: Always
+      name: kubia-rs
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-5kqqd
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-kubia-default-pool-6ff0e626-m6fr
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-5kqqd
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:21Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:24Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:24Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-02-25T10:58:21Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://3000285d881894bf1496584832589ba731b3fb330b6d8a96eba7808d1d4fa483
+      image: docker.io/hartej3003/ch4:latest
+      imageID: docker.io/hartej3003/ch4@sha256:9ac1c77217263267182396c7ff617e1afde1d6e414b884aa96e599bbfe7a66f5
+      lastState: {}
+      name: kubia-rs
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-02-25T10:58:23Z"
+    hostIP: 10.138.0.3
+    phase: Running
+    podIP: 10.32.0.11
+    podIPs:
+    - ip: 10.32.0.11
+    qosClass: BestEffort
+    startTime: "2024-02-25T10:58:21Z"
+kind: List
+metadata:
+  resourceVersion: ""

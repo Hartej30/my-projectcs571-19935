@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: exporter-job
+spec:
+  template:
+    metadata:
+      labels:
+        app: exporter
+    spec:
+      containers:
+      - name: exporter-container
+        image: hartej19935:cs571
+      restartPolicy: OnFailure
+  

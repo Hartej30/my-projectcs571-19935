@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kubia-ds
+spec:
+  selector:
+    matchLabels:
+      app: kubia-ds
+  template:
+    metadata:
+      labels:
+        app: kubia-ds
+    spec:
+      containers:
+      - name: kubia-ds
+        image: hartej3003/ch4
+        ports:
+        - containerPort: 80
